@@ -26,14 +26,44 @@ const AuthDetails = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: "20px",
+      }}
+    >
       {authUser ? (
         <>
-          <p>{`Login In as ${authUser.email}`}</p>
-          <button onClick={userSignOut}>Sign Out</button>
+          <p
+            style={{
+              fontSize: "18px",
+              fontWeight: "bold",
+              marginBottom: "10px",
+            }}
+          >{`Login In as ${authUser.email}`}</p>
+          <button
+            style={{
+              backgroundColor: "#0077ff",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              padding: "10px",
+              fontSize: "16px",
+              cursor: "pointer",
+            }}
+            onClick={userSignOut}
+          >
+            Sign Out
+          </button>
         </>
       ) : (
-        <p>SignIn Again...</p>
+        <p
+          style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "10px" }}
+        >
+          Please Sign In
+        </p>
       )}
     </div>
   );

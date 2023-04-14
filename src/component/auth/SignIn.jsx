@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import FormInput from "./FormInput";
+import SubmitButton from "./SubmitButton";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +25,7 @@ const SignIn = () => {
         <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>
           Log In Your Account
         </h1>
-        <input
+        <FormInput
           type="email"
           placeholder="Enter Your Email"
           value={email}
@@ -38,7 +40,7 @@ const SignIn = () => {
             boxShadow: "none",
           }}
         />
-        <input
+        <FormInput
           type="password"
           placeholder="Enter Your Password"
           value={password}
@@ -53,21 +55,7 @@ const SignIn = () => {
             boxShadow: "none",
           }}
         />
-        <button
-          type="submit"
-          style={{
-            backgroundColor: "#0077FF",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            padding: "10px",
-            fontSize: "16px",
-            cursor: "pointer",
-            width: "100%",
-          }}
-        >
-          LogIn
-        </button>
+        <SubmitButton label="LogIn" />
       </form>
     </div>
   );

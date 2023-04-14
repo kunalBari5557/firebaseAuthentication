@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import FormInput from "./FormInput";
+import SubmitButton from "./SubmitButton";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -23,51 +25,19 @@ const SignUp = () => {
         <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>
           Create Account
         </h1>
-        <input
+        <FormInput
           type="email"
           placeholder="Enter Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "10px",
-            fontSize: "16px",
-            marginBottom: "20px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            boxShadow: "none",
-          }}
         />
-        <input
+        <FormInput
           type="password"
           placeholder="Enter Your Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "10px",
-            fontSize: "16px",
-            marginBottom: "20px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            boxShadow: "none",
-          }}
         />
-        <button
-          type="submit"
-          style={{
-            backgroundColor: "#0077FF",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            padding: "10px",
-            fontSize: "16px",
-            cursor: "pointer",
-            width: "100%",
-          }}
-        >
-          SignUp
-        </button>
+        <SubmitButton label="SignUp" />
       </form>
     </div>
   );
